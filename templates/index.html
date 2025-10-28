@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+ <!-- Navbar -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-indigo-600">Sufyan Farooq</div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-indigo-600">Home</a>
+      <a href="#about" class="hover:text-indigo-600">About</a>
+      <a href="#projects" class="hover:text-indigo-600">Portfolio</a>
+      <a href="#contact" class="hover:text-indigo-600">Contact</a>
+    </nav>
+
+    <!-- Contact Button (Desktop only) -->
+    <a href="#contact"
+       class="hidden md:inline-block border-2 border-indigo-600 text-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition">
+      Contact Me
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-indigo-600 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <nav class="flex flex-col space-y-3 px-6 py-4">
+      <a href="#" class="hover:text-indigo-600">Home</a>
+      <a href="#about" class="hover:text-indigo-600">About</a>
+      <a href="#projects" class="hover:text-indigo-600">Portfolio</a>
+      <a href="#contact" class="hover:text-indigo-600">Contact</a>
+      <a href="#contact"
+         class="border-2 border-indigo-600 text-indigo-600 text-center px-4 py-2 rounded-lg hover:bg-indigo-600 hover:text-white transition">
+        Contact Me
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- JS for Toggle -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+
+  <!-- Hero -->
+  <section class="flex flex-col md:flex-row items-center justify-between px-10 py-20 bg-white">
+    <div class="max-w-lg">
+      <p class="text-gray-500 mb-2">Hey, I am Sufyan Farooq</p>
+      <h1 class="text-4xl font-bold leading-snug mb-4">
+         <span class="text-indigo-600"> Ensuring software quality and reliability</span> 
+      </h1>
+      <p class="text-gray-600 mb-6">
+        SQA engineer with 2 year of experience testing software applications, designing and executing test plans, identifying defects, and
+        collaborating with cross-functional teams. Skilled in using various testing tools and methodologies, with a passion for delivering high
+        quality software that exceeds customer expectations.
+      </p>
+      <a href="#contact" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+        Get in Touch
+      </a>
+    </div>
+    <div class="mt-10 md:mt-0">
+      <img src="{{ url_for('static', filename='images/suf.jpeg') }}" alt="Profile" class="rounded-full w-[250px] h-[250px]">
+
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section class="px-10 py-20 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-12">My Expertise</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Mobile App & Web App Testing</h3>
+        <p class="text-gray-600 text-sm">Ensuring all features work as intended across various devices and OS versions. Evaluating ease of use, intuitiveness of the interface, and overall user experience.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Test planning & execution</h3>
+        <p class="text-gray-600 text-sm">Developing and executing test plans, creating test cases, and managing test scripts. </p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-indigo-600">API & backend testing</h3>
+        <p class="text-gray-600 text-sm"> Proficiency in testing APIs, often using tools like Postman, and understanding data formats like JSON and XML. </p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2 text-indigo-600"> Cloud environments</h3>
+        <p class="text-gray-600 text-sm">Familiarity with testing in cloud environments (AWS, Azure, GCP) and related technologies like Docker and Kubernetes is becoming a necessity. </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="flex flex-col md:flex-row items-center justify-between px-10 py-20 bg-white">
+    <div class="mt-10 md:mt-0 md:w-1/2 flex justify-center">
+      <img src="{{ url_for('static', filename='images/suf.jpeg') }}" alt="Profile" class=" rounded-full w-[250px] h-[250px]">
+    </div>
+    <div class="md:w-1/2 max-w-md mt-10 md:mt-0">
+      <h3 class="text-indigo-600 font-semibold mb-2">About Me</h3>
+      <h2 class="text-3xl font-bold mb-4">Sufyan Farooq</h2>
+
+      <p class="text-gray-600 mb-4">
+        SQA engineer with 2 year of experience testing software applications, designing and executing test plans, identifying defects, and
+        collaborating with cross-functional teams. Skilled in using various testing tools and methodologies, with a passion for delivering high
+        quality software that exceeds customer expectations.
+      </p>
+      <p class="text-blue-600">
+        Email: farooqsufyan701@gmail.com
+        
+      </p>
+    </div>
+  </section>
+
+ <section id="projects" class="px-10 py-20 bg-gray-50">
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-3xl font-bold text-gray-800">My Portfolio</h2>
+    
+  </div>
+
+  <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
+    <!-- Project 1 -->
+    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 overflow-hidden">
+      <img src="{{ url_for('static', filename='images/wl.jpg') }}" alt="Ahuse Project" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">Weightloser</h3>
+        <p class="text-gray-600 mb-4">The weight loser app provides different types of workouts,
+ food plans, diet plans, exercises plan, setting goals and
+ connecting with the community to share the progress. The
+ weight loser app contains different types of features that
+ provide different types of functionality to the user to
+ maintain weight loss </p>
+        <a href="#" class="text-pink-500 font-medium hover:underline">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 overflow-hidden">
+      <img src="{{ url_for('static', filename='images/book.png') }}" alt="App Dashboard Project" class="w-full h-56 object-contain">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">SynopsisPlus</h3>
+        <p class="text-gray-600 mb-4">Synopsis Plus is an innovative book summary app that revolutionizes access to knowledge with its diverse library spanning genres like Self-Help, Business, Non-fiction, Biographies, and more. Carefully crafted summaries distill main points and insights, offering a comprehensive overview in a concise format.</p>
+        <a href="#" class="text-pink-500 font-medium hover:underline">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 overflow-hidden">
+      <img src="{{ url_for('static', filename='images/swari.png') }}" alt="Easy Rent Project" class="w-full h-56 object-contain">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">SwariGo</h3>
+        <p class="text-gray-600 mb-4">Swarigo makes city travel simple, fast, and reliable. Whether you’re heading to work, meeting friends, or catching a flight, you can book a ride in just a few taps. With real-time driver tracking, multiple payment options including cash and card, and transparent upfront pricing.</p>
+        <a href="#" class="text-pink-500 font-medium hover:underline">View Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Contact Section -->
+  <section id="contact" class="px-6 md:px-10 py-20 bg-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+      
+    </div>
+
+    <form action="/contact" method="POST" class="max-w-3xl mx-auto space-y-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="text" name="first_name" placeholder="First name" class="border border-purple-400 rounded-lg p-3 w-full focus:ring-2 focus:ring-purple-500 outline-none">
+        <input type="text" name="last_name" placeholder="Last name" class="border border-purple-400 rounded-lg p-3 w-full focus:ring-2 focus:ring-purple-500 outline-none">
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="email" name="email" placeholder="Email" class="border border-purple-400 rounded-lg p-3 w-full focus:ring-2 focus:ring-purple-500 outline-none">
+        <input type="text" name="phone" placeholder="Phone number" class="border border-purple-400 rounded-lg p-3 w-full focus:ring-2 focus:ring-purple-500 outline-none">
+      </div>
+      <select name="topic" class="border border-purple-400 rounded-lg p-3 w-full focus:ring-2 focus:ring-purple-500 outline-none">
+        <option>Select one...</option>
+        <option>Project Inquiry</option>
+        <option>Collaboration</option>
+        <option>Freelance Work</option>
+      </select>
+      <textarea name="message" rows="5" placeholder="Type your message..." class="border border-purple-400 rounded-lg p-3 w-full focus:ring-2 focus:ring-purple-500 outline-none"></textarea>
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" required>
+        <span class="text-gray-600 text-sm">I accept the terms</span>
+      </label>
+      <button type="submit" class="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 w-full md:w-auto">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-10 mt-20">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div class="text-2xl font-bold text-indigo-600">MyPortfolio</div>
+      <nav class="flex space-x-6 text-sm text-gray-600">
+        <a href="#">Home</a>
+        <a href="#about">About me</a>
+        <a href="#contact">Contact</a>
+        <a href="#projects">Portfolio</a>
+      </nav>
+      <div class="flex space-x-4 text-gray-600">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+   <div class="text-left text-gray-500 text-sm mt-6 ml-24">
+  • Privacy Policy • Terms of Service
+</div>
+
+
+  </footer>
+
+</body>
+</html>
