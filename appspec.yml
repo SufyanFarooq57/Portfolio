@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/CALCULATOR_APP
+    destination: /home/ubuntu/PORTFOLIO
 permissions:
-  - object: /home/ubuntu/CALCULATOR_APP
+  - object: /home/ubuntu/PORTFOLIO
     owner: ubuntu
     group: ubuntu
     mode: 755
