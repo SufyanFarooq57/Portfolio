@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "No build required, just passing files to deploy"
+artifacts:
+  files:
+    - '**/*'
